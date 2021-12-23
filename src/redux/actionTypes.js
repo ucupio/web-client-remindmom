@@ -1,0 +1,9 @@
+export const PARENT = 'PARENT'
+export const PARENTS = 'PARENTS'
+export const ERROR_PARENT = 'ERROR_PARENT'
+export const LOADING_PARENT = 'LOADING_PARENT'
+
+export const CHILDREN = 'CHILDREN'
+export const CHILDRENS = 'CHILDRENS'
+export const ERROR_CHILDREN = 'ERROR_CHILDREN'
+export const LOADING_CHILDREN = 'LOADING_CHILDREN'
