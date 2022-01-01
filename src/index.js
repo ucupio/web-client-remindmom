@@ -1,18 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux'
 import store from './redux/store'
+import 'simplebar/src/simplebar.css'
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </HelmetProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
