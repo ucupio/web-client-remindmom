@@ -1,11 +1,14 @@
 import React from 'react'
-import { Container, Typography, Button } from '@mui/material'
+import { Container, Typography, Button, Stack } from '@mui/material'
 
 function DetailChildren () {
   return (
     <Container>
-      <Typography>RemindMom</Typography>
-      <Button>Show</Button>
+      <Stack>
+        <Typography variant="h2">Detail Anak</Typography>
+        <Button>Show</Button>
+      </Stack>
+      
     </Container>
   )
 }
