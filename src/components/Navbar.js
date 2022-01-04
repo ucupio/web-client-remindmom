@@ -10,6 +10,8 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SecurityUpdateIcon from '@mui/icons-material/SecurityUpdate';
 import { pink } from '@mui/material/colors';
+import Chip from '@mui/material/Chip';
+import { useHistory } from 'react-router-dom'
 
 const pages = [];
 
@@ -27,18 +29,27 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
+  let history = useHistory();
+
+  function handleClick () {
+    history.push("/");
+  }
+
   return (
     <AppBar position="static" color="transparent" disableElevation>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, color: pink[500]}}
+            onClick={backhome}
+            type="button"
           >
             RemindMom
-          </Typography>
+          </Typography> */}
+          <Chip label="RemindMom" color="primary" onClick={handleClick} component="h5" />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <Button
