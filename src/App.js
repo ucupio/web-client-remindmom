@@ -1,6 +1,6 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import { LandingPage, DetailChildren, DetailMedicalRecord, Page404} from './pages'
+import { LandingPage, DetailChildren, DetailMedicalRecord, Find, Page404} from './pages'
 import ThemeConfig from './theme';
 import GlobalStyles from './theme/globalStyles';
 import ScrollToTop from './components/ScrollToTop';
@@ -20,13 +20,13 @@ function App() {
             <DetailChildren/>
           </Route>
 
-          <Route exact path="/medicalrecords/:id">
-            <DetailMedicalRecord/>
-          </Route>
-
           <Route exact path="/">
             <LandingPage/>
           </Route>
+
+          <Route path="/find">
+            <Find/>
+          </Route>          
 
           <Route path="*">
             <Page404/>

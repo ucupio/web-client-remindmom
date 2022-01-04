@@ -77,6 +77,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           <Typography
+          to="/find"
             variant="h5"
             noWrap
             component="div"

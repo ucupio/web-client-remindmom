@@ -20,6 +20,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
+    "react-webcam-barcode-scanner": "^0.0.2-rc2",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "simplebar": "^5.3.6",
