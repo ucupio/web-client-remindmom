@@ -21,6 +21,10 @@ import TableRow from '@mui/material/TableRow';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DetailTable from '../components/DetailTable'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea, CardActions } from '@mui/material';
 
 import {
   Chart as ChartJS,
@@ -156,13 +160,21 @@ function DetailChildren () {
   let medical= useSelector(state => state.medical)
   let treatment = useSelector(state => state.treatment)
 
-
+  console.log(children);
   let history = useHistory()
   const dispatch = useDispatch()
+<<<<<<< HEAD
 
   function getTreatmentName(idTreatment) {
     if(idTreatment===undefined||idTreatment===0) return 'kunjungan'
     else if(idTreatment===null) return 'kelahiran'
+=======
+  const {id} = useParams()
+  console.log(id, "=============");
+  function getTreatmentName(idTreatment) {
+    if(idTreatment===undefined||idTreatment===0) return 'kunjungan'
+    else if (idTreatment=== null) return 'kelahiran'
+>>>>>>> 80740b0de228d0f9369b425217fd016c9bab2c38
     let result = treatment.treatment.result.find(el => el.id === idTreatment)
     return result.name
   }
@@ -199,8 +211,27 @@ function DetailChildren () {
             marginBottom: 10
           }}
         >
-          <Typography variant="h5" sx={{marginBottom: 5}}>Biodata</Typography>
-          <Box
+          {/* <Typography variant="h5" sx={{ marginBottom: 5 }}>Biodata</Typography> */}
+          <Card sx={{ maxWidth: 345, mx:"auto" }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="350"
+                image={children.children.result.gender !== 'pria' ? "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png" : "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/boy_afro_kid_child-256.png"}
+                alt="Avatar"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {children.children.result.name}
+                </Typography>
+                <Typography gutterBottom variant="h7" component="div">
+                  {children.children.result.nik}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">{children.children.result.pob}, {new Date(children.children.result.dob).toDateString()} </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+          {/* <Box
             sx={{
               // width: "100%",
               display: 'flex',
@@ -258,7 +289,7 @@ function DetailChildren () {
               <Typography variant="p">{new Date(children.children.result.dob).toISOString().split('T')[0]}</Typography>
               <Typography variant="p">{children.children.result.pob}</Typography>
             </Stack>
-          </Box>
+          </Box> */}
         </Box>
         <Box
           sx={{
@@ -274,7 +305,7 @@ function DetailChildren () {
             width: "100%",
           }}
           >
-            <Typography variant="h5"  sx={{marginBottom: 5}}>Timeline Treatment</Typography>
+            <Typography variant="h5"  sx={{marginBottom: 5}}>Timeline Medical Record</Typography>
             <Stepper activeStep={activeStep} orientation="vertical">
               {medical.medicalRecords.result.map((step, index) => (
                 <Step key={step.label}>
