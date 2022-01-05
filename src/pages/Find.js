@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BarcodeScannerComponent from "react-webcam-barcode-scanner";
-
+import {useHistory} from 'react-router-dom'
 // material
 import { styled } from '@mui/material/styles';
 import { Paper, InputBase, Divider, IconButton, Stack, ToggleButton,ToggleButtonGroup, TextField, Typography, Button, Box } from '@mui/material';
@@ -22,9 +22,11 @@ export default function Find() {
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
+  let history = useHistory();
 
   function search() {
-    window.location.replace("/childrens/"+input)
+    history.push('/childrens/'+input)
+    // window.location.replace("https://kind-almeida-a90c21.netlify.app/childrens/"+input)
   }
 
     

@@ -15,7 +15,7 @@ export const fetchChildrenById = (id) => {
     return (dispatch, previousState) => {
         axios({
             method: 'GET',
-            url: `http://localhost:4002/children/details/${id}`
+            url: `https://remindmom-kia-server.herokuapp.com/children/details/${id}`
         })
         .then(({data}) => {
             dispatch({
@@ -41,7 +41,7 @@ export const fetchMedicalRecords = (id) => {
     return (dispatch, previousState) => {
         axios({
             method: 'GET',
-            url: `http://localhost:4002/medicalRecord/${id}`
+            url: `https://remindmom-kia-server.herokuapp.com/medicalRecord/${id}`
         })
         .then(({data}) => {
             dispatch({
@@ -68,7 +68,7 @@ export const fetchMedicalTreatment = () => {
     return (dispatch, previousState) => {
         axios({
             method: 'GET',
-            url: `http://localhost:4002/treatment`
+            url: `https://remindmom-kia-server.herokuapp.com/treatment`
         })
         .then(({data}) => {
             dispatch({

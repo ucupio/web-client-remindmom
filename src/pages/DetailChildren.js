@@ -145,6 +145,7 @@ function DetailChildren () {
       ],
     };
   }
+  const {id} = useParams()
   useEffect(() => {
     dispatch(fetchChildrenById(id))
     dispatch(fetchMedicalRecords(id))
@@ -158,10 +159,10 @@ function DetailChildren () {
 
   let history = useHistory()
   const dispatch = useDispatch()
-  const {id} = useParams()
 
   function getTreatmentName(idTreatment) {
-    if(idTreatment===undefined||idTreatment===0||idTreatment===null) return 'kunjungan'
+    if(idTreatment===undefined||idTreatment===0) return 'kunjungan'
+    else if(idTreatment===null) return 'kelahiran'
     let result = treatment.treatment.result.find(el => el.id === idTreatment)
     return result.name
   }
@@ -284,7 +285,7 @@ function DetailChildren () {
                     //   ) : null
                     // }
                   >
-                    {getTreatmentName(step.id)}
+                    {getTreatmentName(step.id_treatment)}
                     <Typography sx={{fontSize: 10, opacity:0.7}}>
                       {new Date(step.createdAt).toISOString().split('T')[0]}
                     </Typography>
@@ -313,7 +314,7 @@ function DetailChildren () {
                 </Step>
               ))}
             </Stepper>
-            {activeStep === steps.length && (
+            {activeStep === steps.length-1 && (
               <Paper square elevation={0} sx={{ p: 3 }}>
                 <Typography>All steps completed - you&apos;re finished</Typography>
                 <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
