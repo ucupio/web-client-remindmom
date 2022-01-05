@@ -29,7 +29,7 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position="static" color="transparent" disableElevation>
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
           <Typography
             variant="h5"
@@ -76,14 +76,6 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'}, color: pink[500] }}
-          >
-            RemindMom
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
