@@ -163,18 +163,10 @@ function DetailChildren () {
   console.log(children);
   let history = useHistory()
   const dispatch = useDispatch()
-<<<<<<< HEAD
 
   function getTreatmentName(idTreatment) {
     if(idTreatment===undefined||idTreatment===0) return 'kunjungan'
     else if(idTreatment===null) return 'kelahiran'
-=======
-  const {id} = useParams()
-  console.log(id, "=============");
-  function getTreatmentName(idTreatment) {
-    if(idTreatment===undefined||idTreatment===0) return 'kunjungan'
-    else if (idTreatment=== null) return 'kelahiran'
->>>>>>> 80740b0de228d0f9369b425217fd016c9bab2c38
     let result = treatment.treatment.result.find(el => el.id === idTreatment)
     return result.name
   }
