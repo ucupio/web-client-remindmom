@@ -33,6 +33,7 @@ function App() {
             <Page404/>
           </Route>
         </Switch>
+        <Footer />
       </ThemeConfig>
     </div>
     
