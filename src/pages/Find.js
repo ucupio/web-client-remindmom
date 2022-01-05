@@ -61,7 +61,8 @@ export default function Find() {
                     <Box
                         sx={{
                             width:"100%",
-                            mx:"auto"
+                            mx: "auto",
+                            mb:25
                         }}
                     >
                         <Box

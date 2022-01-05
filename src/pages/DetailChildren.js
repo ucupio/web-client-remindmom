@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
-import { Container, Typography, Divider, Stack, Box, CircularProgress, Stepper, Step, StepLabel, StepContent, Button, Paper } from '@mui/material'
+import { Card, CardActionArea, CardMedia, CardContent, Container, Typography, Divider, Stack, Box, CircularProgress, Stepper, Step, StepLabel, StepContent, Button, Paper } from '@mui/material'
 import {fetchChildrenById, fetchMedicalRecords, fetchMedicalTreatment} from '../redux/actions/index'
 
 import {
@@ -108,7 +108,7 @@ function DetailChildren () {
   console.log(treatment.treatment);
   return (
     <Container>
-      <Stack sx={{display: 'flex', direction: 'row'}} divider={<Divider></Divider>}>
+      <Stack sx={{display: 'flex', direction: 'row', mb:20}} divider={<Divider></Divider>}>
         <Box
           sx={{
             width: "100%",
@@ -197,7 +197,9 @@ function DetailChildren () {
           </Box>
         </Box>
       </Stack>
-      
+      {/* <Stack sx={{ backgroundColor: "#EC4888", mt: 5 }}>
+        <Typography variant="h7" sx={{ mb: 5, mt: 5, color: "white" }} component="div" >RemindMom | 2022</Typography>
+      </Stack> */}
     </Container>
   )
 }
