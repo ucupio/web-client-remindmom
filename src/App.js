@@ -6,6 +6,7 @@ import GlobalStyles from './theme/globalStyles';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import { BaseOptionChartStyle } from './components/charts/BaseOptionChart';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -32,7 +33,6 @@ function App() {
             <Page404/>
           </Route>
         </Switch>
-
       </ThemeConfig>
     </div>
     
