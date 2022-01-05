@@ -1,3 +1,5 @@
+import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
 // material
 import { styled } from '@mui/material/styles';
@@ -6,6 +8,7 @@ import Page from '../components/Page';
 import { pink } from '@mui/material/colors';
 
 // ----------------------------------------------------------------------
+
 
 const RootStyle = styled(Page)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
@@ -34,7 +37,7 @@ export default function Login() {
             Aplikasi untuk mengingatkan orang tua akan pentingnya memperhatikan tumbuh kembang anak.
           </Typography>
         </Box>
-        <ColorButton variant="contained" size="large">
+        <ColorButton variant="contained" size="large" to="/find" component={RouterLink}>
           Coba Sekarang
         </ColorButton>
       </Box>
@@ -43,6 +46,7 @@ export default function Login() {
         src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header4/Header-4-1.png"
         sx={{ flex: 1, width: 'auto', height: '200',py: 8, px: 16, mx: 'auto'}}
       />
+      
     </RootStyle>
   );
 }

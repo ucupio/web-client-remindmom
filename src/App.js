@@ -1,11 +1,12 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import { LandingPage, DetailChildren, DetailMedicalRecord, Page404} from './pages'
+import { LandingPage, DetailChildren, DetailMedicalRecord, Find, Page404} from './pages'
 import ThemeConfig from './theme';
 import GlobalStyles from './theme/globalStyles';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import { BaseOptionChartStyle } from './components/charts/BaseOptionChart';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,19 +21,18 @@ function App() {
             <DetailChildren/>
           </Route>
 
-          <Route exact path="/medicalrecords/:id">
-            <DetailMedicalRecord/>
-          </Route>
-
           <Route exact path="/">
             <LandingPage/>
           </Route>
+
+          <Route path="/find">
+            <Find/>
+          </Route>          
 
           <Route path="*">
             <Page404/>
           </Route>
         </Switch>
-
       </ThemeConfig>
     </div>
     
