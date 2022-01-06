@@ -127,7 +127,12 @@ function DetailChildren () {
                 alt="Avatar"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h3" component="div" sx={{
+                  fontWeight: 'bold', 
+                  background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}>
                   {children.children.result.name}
                 </Typography>
                 <Typography gutterBottom variant="h7" component="div">
@@ -152,7 +157,12 @@ function DetailChildren () {
             width: "100%",
           }}
           >
-            <Typography variant="h5"  sx={{marginBottom: 5}}>Timeline Medical Record</Typography>
+            <Typography variant="h5" sx={{
+            fontWeight: 'bold', 
+            background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>Timeline Medical Record</Typography>
             <Stepper activeStep={activeStep} orientation="vertical">
               {medical.medicalRecords.result.map((step, index) => (
                 <Step key={step.label}>

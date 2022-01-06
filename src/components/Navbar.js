@@ -9,8 +9,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SecurityUpdateIcon from '@mui/icons-material/SecurityUpdate';
-import { pink } from '@mui/material/colors';
-import Chip from '@mui/material/Chip';
 import { useHistory } from 'react-router-dom'
 
 const pages = [];
@@ -39,17 +37,13 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" color="transparent" disableElevation>
       <Container>
         <Toolbar disableGutters>
-          {/* <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, color: pink[500]}}
-            onClick={backhome}
-            type="button"
-          >
-            RemindMom
-          </Typography> */}
-          <Chip label="RemindMom" color="primary" onClick={handleClick} component="h5" />
+          <Typography variant="h5" sx={{
+            fontWeight: 'bold', 
+            background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            cursor: 'pointer'
+          }} onClick={handleClick} clickable> RemindMom</Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <Button
@@ -87,15 +81,6 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-          to="/find"
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'}, color: pink[500] }}
-          >
-            RemindMom
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -114,7 +99,7 @@ const ResponsiveAppBar = () => {
             </Button>
           </Box>
         </Toolbar>
-        </Container>
+      </Container>
     </AppBar>
   );
 };

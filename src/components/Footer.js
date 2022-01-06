@@ -1,11 +1,12 @@
 import React from "react";
-import { Stack, Typography } from "@mui/material";
+import {  Box, Paper, Typography } from "@mui/material";
+import { pink } from '@mui/material/colors'
 
 export default function Footer() {
     return (
-        <Stack position="static" sx={{ backgroundColor:"#EC4888", mt: 5}}>
-            <Typography variant="h7" sx={{mb:5, mt:5, color:"white"}} component="div" >RemindMom | 2022</Typography>
-        </Stack>
+        <Paper square sx={{position: 'fixed', bottom: 0, left: 0, right: 0, background: pink[500]}} >
+            <Typography variant="body1" sx={{my:2, color:"white"}} component="div" >CopyRight © RemindMom | {new Date().getFullYear()}</Typography>
+        </Paper>
     )
     
 }
