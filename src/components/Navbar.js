@@ -37,13 +37,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" color="transparent" disableElevation>
       <Container>
         <Toolbar disableGutters>
-          <Typography variant="h5" sx={{
-            fontWeight: 'bold', 
-            background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            cursor: 'pointer'
-          }} onClick={handleClick} clickable> RemindMom</Typography>
+          
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <Button
@@ -81,6 +75,14 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+          <Typography variant="h5" sx={{
+            display: { xs: 'none', md: 'inline' },
+            fontWeight: 'bold', 
+            background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            cursor: 'pointer'
+          }} onClick={handleClick} clickable> RemindMom</Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button

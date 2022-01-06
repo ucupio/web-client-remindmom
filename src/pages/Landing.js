@@ -16,6 +16,7 @@ const RootStyle = styled(Page)(({ theme }) => ({
     direction: 'column',
     justifyContent: 'center',
     alignItems : 'center',
+    height: '100%'
   }
 }));
 
@@ -30,14 +31,24 @@ const ColorButton = styled(Button)(({ theme }) => ({
 export default function Login() {
   return (
     <RootStyle title="RemindMom">
-      <Box sx={{ flex: 2, pl:16}}>
+      <Box sx={{ flex: 2, pl:{md:16, xs: 0}}}>
+        <Box
+          component="img"
+          src={require("../assets/remind-mom-logo.png")}
+          sx={{width: 'auto', height: '120px', mx: 'auto', mt:2,
+            background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            WebkitBackgroundClip: "image",
+            WebkitTextFillColor: "transparent",
+          }}
+          
+        />
         <Typography variant="h2" sx={{
           fontWeight: 'bold',
           background: '-webkit-linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}> RemindMom</Typography>
-        <Box sx={{ fontSize:24 }}>
+        <Box sx={{ fontSize:24, mb: 2 }}>
           <Typography variant={'subtitle'} display="block" sx={{color: pink[500]}}>
             Aplikasi untuk mengingatkan orang tua akan pentingnya memperhatikan tumbuh kembang anak.
           </Typography>
@@ -49,7 +60,7 @@ export default function Login() {
       <Box
         component="img"
         src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header4/Header-4-1.png"
-        sx={{ flex: 1, width: 'auto', height: '200',py: 8, px: 16, mx: 'auto'}}
+        sx={{ flex: 1, width: 'auto', height: '200',py: 4, px: 16, mx: 'auto', my:0}}
       />
       
     </RootStyle>
